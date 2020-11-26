@@ -2,29 +2,27 @@ import React, { Component, useState } from "react";
 import "../styles/App.css";
 
 const App = (props) => {
- const {slides} = props;
+  const { slides } = props;
   const [index, setIndex] = useState(0);
- let title = slides[index].title;
- let text = slides[index].text;
+  let title = slides[index].title;
+  let text = slides[index].text;
   const nextClick = () => {
     if (index <= slides.length || slides.length === 1) {
       console.log("nextclick", index);
-    let newIndex = index+1;
-     setIndex(newIndex);
-        }
+      let newIndex = index + 1;
+      setIndex(newIndex);
+    }
   };
   const prevClick = () => {
-
     if (index >= 0 && index <= slides.length) {
       console.log("preClick", index);
-      let newIndex=index-1;
+      let newIndex = index - 1;
       setIndex(newIndex);
-    
     }
   };
 
   const restartClick = () => {
-   setIndex(0);
+    setIndex(0);
   };
 
   return (
